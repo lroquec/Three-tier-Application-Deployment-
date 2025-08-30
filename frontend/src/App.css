@@ -23,8 +23,8 @@
     flex-grow: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 20px;
+    align-items: flex-start;   /* ⬅ se alinea arriba */
+    padding: 40px 20px;        /* más espacio superior */
     background: linear-gradient(135deg, #f8f9fa, #e9ecef);
 }
 
