@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f8f9fa;
     color: #333;
     line-height: 1.6;
 }
@@ -13,12 +13,13 @@ body {
     align-items: center;
     min-height: 100vh;
     padding: 20px;
-    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    background: linear-gradient(135deg, #9cb86f, #7bb3d9, #5a9bd4);
 }
 
 /* Optional: Add some more global styles for typography */
 h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
+    color: #2c3e50;
 }
 
 a {
@@ -27,7 +28,7 @@ a {
 }
 
 a:hover {
-    color: #6e8efb;
+    color: #5a9bd4;
 }
 
 /* Styling for any code elements */
