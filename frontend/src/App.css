@@ -5,11 +5,18 @@
 }
 
 .app-header {
-    background-color: #282c34;
+    background: linear-gradient(135deg, #9cb86f, #7bb3d9);
     color: white;
-    padding: 10px 20px;
+    padding: 15px 20px;
     text-align: center;
     font-size: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.app-header h1 {
+    margin: 0;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 
 .main-content {
@@ -18,52 +25,131 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
 }
 
 .todo-container {
     width: 100%;
     max-width: 600px;
-    padding: 20px;
+    padding: 30px;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
 .task-form {
     display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
+    gap: 15px;
+    margin-bottom: 25px;
 }
 
 .task-input {
     flex-grow: 1;
 }
 
-.add-task-btn, .delete-task-btn {
-    flex-shrink: 0;
-    box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
-    transition: transform 0.1s ease-in-out;
+.task-input .MuiOutlinedInput-root {
+    border-radius: 10px;
 }
 
-.add-task-btn:hover, .delete-task-btn:hover {
-    transform: scale(1.05);
+.task-input .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+    border-color: #7bb3d9;
+}
+
+.task-input .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: #5a9bd4;
+}
+
+.add-task-btn {
+    flex-shrink: 0;
+    box-shadow: 0px 3px 8px rgba(0,0,0,0.2);
+    transition: all 0.2s ease-in-out;
+    background: linear-gradient(135deg, #9cb86f, #7bb3d9);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-weight: 500;
+}
+
+.add-task-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+    background: linear-gradient(135deg, #8ba85f, #6aa3c9);
+}
+
+.delete-task-btn {
+    flex-shrink: 0;
+    box-shadow: 0px 3px 8px rgba(0,0,0,0.2);
+    transition: all 0.2s ease-in-out;
+    background: linear-gradient(135deg, #9cb86f, #7bb3d9);
+    color: #e74c3c;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: 500;
+}
+
+.delete-task-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+    background: linear-gradient(135deg, #8ba85f, #6aa3c9);
+    color: #c0392b;
 }
 
 .tasks-list {
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 .task-item {
     display: flex;
     align-items: center;
-    margin-top: 10px;
-    padding: 10px;
-    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+    margin-top: 15px;
+    padding: 15px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.08);
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    border-left: 4px solid transparent;
+    background-image: linear-gradient(white, white), linear-gradient(135deg, #9cb86f, #7bb3d9, #5a9bd4);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    transition: all 0.2s ease-in-out;
+}
+
+.task-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.12);
 }
 
 .task-text {
     flex-grow: 1;
-    margin: 0 10px;
+    margin: 0 15px;
+    font-size: 1.1rem;
+    color: #2c3e50;
 }
 
 .task-text.completed {
     text-decoration: line-through;
+    color: #7f8c8d;
+    opacity: 0.7;
+}
+
+/* Checkbox styling */
+.MuiCheckbox-colorPrimary.Mui-checked {
+    color: #5a9bd4;
+}
+
+.MuiCheckbox-colorPrimary:hover {
+    background-color: rgba(90, 155, 212, 0.04);
+}
+
+/* Button overrides for Material-UI */
+.MuiButton-outlinedPrimary {
+    border-color: #7bb3d9;
+    color: #5a9bd4;
+}
+
+.MuiButton-outlinedPrimary:hover {
+    border-color: #5a9bd4;
+    background-color: rgba(90, 155, 212, 0.04);
 }
 
