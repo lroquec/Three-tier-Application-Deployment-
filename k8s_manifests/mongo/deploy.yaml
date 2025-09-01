@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: workshop
+  namespace: ws-se108212-ns
   name: mongodb
 spec:
   replicas: 1
