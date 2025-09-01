@@ -1,18 +1,41 @@
 {
-  // Use IntelliSense to learn about possible attributes.
-  // Hover to view descriptions of existing attributes.
-  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
-
     {
       "type": "node",
-      "request": "attach",
-      "name": "Attach to Pod Backend",
-      "address": "localhost",
-      "port": 9229,
-      "restart": true,
-      "skipFiles": ["<node_internals>/**"]
+      "request": "launch",
+      "name": "Launch Backend",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}/backend/index.js",
+      "cwd": "${workspaceFolder}/backend",
+      "env": {
+        "MONGO_CONN_STR": "mongodb://mongodb-svc:27017/tasksdb"
+      },
+      "runtimeArgs": ["--inspect=0.0.0.0:9229"]
+    },
+    {
+      "type": "msedge",
+      "request": "launch",
+      "name": "Launch Frontend",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}/frontend/src",
+      "preLaunchTask": "Start React",
+      "env": {
+        "REACT_APP_BACKEND_URL": "http://localhost:8080/api/tasks",
+        "SKIP_PREFLIGHT_CHECK": "true",
+        "NODE_OPTIONS": "--openssl-legacy-provider"
+      },
+      "sourceMapPathOverrides": {
+        "webpack:///src/*": "${webRoot}/*",
+        "webpack:///./src/*": "${webRoot}/*"
+      }
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Launch Full Stack",
+      "configurations": ["Launch Backend", "Launch Frontend"],
+      "stopAll": true
     }
   ]
 }
